@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="55c7-45e5-b4ec-d17c" name="Gaslands" revision="22" battleScribeVersion="2.03" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="55c7-45e5-b4ec-d17c" name="Gaslands" revision="23" battleScribeVersion="2.03" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <publications>
     <publication id="55c7-45e5-pubEL3DK" name="TX3"/>
     <publication id="a0bf-31f8-e06a-12f0" name="Gaslands Refuelled" shortName="Refuelled" publicationDate="2019"/>
@@ -55,7 +55,11 @@
     </forceEntry>
   </forceEntries>
   <entryLinks>
-    <entryLink id="7209-f619-ccee-874e" name="Sponsor" hidden="false" collective="false" import="true" targetId="9318-eb03-9bdd-ec00" type="selectionEntry"/>
+    <entryLink id="7209-f619-ccee-874e" name="Sponsor" hidden="false" collective="false" import="true" targetId="9318-eb03-9bdd-ec00" type="selectionEntry">
+      <categoryLinks>
+        <categoryLink id="5d13-cdda-b724-28cc" name="Sponsor" hidden="false" targetId="6b0c-dbca-afd2-7a45" primary="true"/>
+      </categoryLinks>
+    </entryLink>
   </entryLinks>
   <sharedSelectionEntries>
     <selectionEntry id="b5d8-cf00-181a-b503" name="Bike" hidden="false" collective="false" import="true" type="model">
@@ -1685,6 +1689,10 @@
           </modifiers>
         </entryLink>
       </entryLinks>
+      <costs>
+        <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
+        <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="0.0"/>
+      </costs>
     </selectionEntry>
   </sharedSelectionEntries>
   <sharedSelectionEntryGroups>
@@ -1705,6 +1713,11 @@
                   </conditions>
                 </modifier>
               </modifiers>
+              <rules>
+                <rule id="5cf5-273f-5705-dc4c" name="Nitro Booster" hidden="false">
+                  <description>Once per activation, at the start of a Movement step, this vehicle may declare that it is using a Nitro Booster. If it does, this vehicle makes an immediate forced, Long Straight move forward, and then gains Hazard Tokens until it has 5 Hazard Tokens. It then resolves its Movement Step as normal, except that the vehicle may not reverse. At the end of a Movement Step in which this vehicle used Nitro Booster, it gains Hazard Tokens until it has 5 Hazard Tokens.</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="6.0"/>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
@@ -1718,12 +1731,23 @@
                   </conditions>
                 </modifier>
               </modifiers>
+              <rules>
+                <rule id="cfe0-6180-df85-348e" name="Extra Crewmember" hidden="false">
+                  <description>+1 Crew
+A vehicle may not purchase more Extra Crewmembers than its starting Crew Value (this rule is not enforced by Battlescribe)</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="4.0"/>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
               </costs>
             </selectionEntry>
             <selectionEntry id="89d7-ec4b-86b1-20fc" name="Armour Plating" hidden="false" collective="false" import="true" type="upgrade">
+              <rules>
+                <rule id="2b29-3d98-4e59-c9f7" name="Armour Plating" hidden="false">
+                  <description>+2 Hull</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="1.0"/>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="4.0"/>
@@ -1746,6 +1770,11 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="72ca-72fa-136e-03bd" type="max"/>
               </constraints>
+              <rules>
+                <rule id="740d-44d3-ec35-92d9" name="Tank Tracks" hidden="false">
+                  <description>+1 Handling, -1 Max Gear</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="1.0"/>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="4.0"/>
@@ -1755,6 +1784,11 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="218e-2ab7-1852-cf0b" type="max"/>
               </constraints>
+              <rules>
+                <rule id="2493-9514-c59f-6e2d" name="Improved Sludge Thrower" hidden="false">
+                  <description>This vehicle may place the Burst templates for its dropped weapons anywhere that is at least partially within Medium range and 360-degree arc of fire of this vehicle.</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="1.0"/>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="2.0"/>
@@ -1776,6 +1810,11 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fd31-f939-4841-82ca" type="max"/>
               </constraints>
+              <rules>
+                <rule id="b8a9-a3cd-4746-96ae" name="Prison Car" hidden="false">
+                  <description>-2 Hull</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="0.0"/>
@@ -1797,6 +1836,13 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="e3d2-45ea-0b86-12fe" type="max"/>
               </constraints>
+              <rules>
+                <rule id="e662-2bc6-5086-4433" name="Experimental Nuclear Engine" hidden="false">
+                  <description>+2 Max Gear (up to a maximum of 6)
+This vehicle conisders the Long Straight to be permitted in any Gear. The Long Straight is not considered Hazardous or Trivial in any Gear.
+If this vehicle ever fails a Flip check, it is immediately Wrecked and automatically Explodes. When this vehicle explodes, it counts as Heavyweight.</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="5.0"/>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
@@ -1817,6 +1863,14 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="ffe4-631a-7be1-4c49" type="max"/>
               </constraints>
+              <rules>
+                <rule id="3413-b81f-824d-5a17" name="Experimental Teleporter" hidden="false">
+                  <description>At the start of this vehicle&apos;s activation this vehicle may choose to activate the Experimental Teleporter prior to and in addition to its normal Movement Step.
+When the Experimental Teleporter is activated, this vehicle gains 3 Hazard Tokens and then rolls a single Skid Die.
+If the Skid Die result is anything other than a Hazard, place this vehicle anywhere within Medium range of its current position, not touching an obstruction or terrain, without changing the vehicle&apos;s facing. This does not cause a Collision. This vehicle then begins its normal Movement Step from this new location.
+If the Skid Die result is a Hazard, the player to the left of the controller of the vehicle anywhere within Long range of its current position, not touching an obstruction or terrain, without altering its facing. This does not cause a Collision.</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="7.0"/>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
@@ -1826,6 +1880,11 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="fd1d-ba51-6626-3110" type="max"/>
               </constraints>
+              <rules>
+                <rule id="69e3-0b10-1b5a-344c" name="Roll Cage" hidden="false">
+                  <description>When this vehicle suffers a Flip, this vehicle may choose to ignore the 2 hits received from the Flip.</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="4.0"/>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="1.0"/>
@@ -1843,6 +1902,11 @@
                   </conditionGroups>
                 </modifier>
               </modifiers>
+              <rules>
+                <rule id="e56d-a283-9f68-9e30" name="Microplate Armour" hidden="false">
+                  <description>+2 Hull</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="6.0"/>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
@@ -1856,6 +1920,12 @@
                   </conditions>
                 </modifier>
               </modifiers>
+              <rules>
+                <rule id="4cc3-98fe-1a60-1f05" name="Ram" hidden="false">
+                  <description>A vehicle may only purchase a single Ram on each facing.
+When involved in a Collision on the declared facing +2 Smash Attack dice, and this vehicle does not gain any Hazard Tokens as a result of the Collision.</description>
+                </rule>
+              </rules>
               <entryLinks>
                 <entryLink id="080a-0ddd-adb4-4c87" name="Mounting" hidden="false" collective="false" import="true" targetId="fa58-967b-5455-6fde" type="selectionEntryGroup"/>
               </entryLinks>
@@ -1879,6 +1949,12 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="f72f-0cb4-5553-6bec" type="max"/>
               </constraints>
+              <rules>
+                <rule id="d154-6978-ac8f-d0ba" name="Exploding Ram" hidden="false">
+                  <description>The first time this vehicle is involved in a Collision on the declared facing in a game, this vehicle must declare a Smash Attack (efen if the Collicion is a Tailgate). During this Smash Attack this vehicle gains +6 attack dice. If any 1s or 2s are rolled on this vehicle&apos;s attack dice during this Smash Attack, this vehicle immediatley loses one hull point for each 1 or 2 rolled.
+A vehicle may equip both a Ram and Explosive Ram on the same facing, and their effects are cumulative.</description>
+                </rule>
+              </rules>
               <entryLinks>
                 <entryLink id="897f-2e54-bda5-8750" name="Mounting" hidden="false" collective="false" import="true" targetId="fa58-967b-5455-6fde" type="selectionEntryGroup"/>
               </entryLinks>
@@ -1902,6 +1978,11 @@
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="24fc-88e3-703c-13ac" type="max"/>
               </constraints>
+              <rules>
+                <rule id="7a06-582e-1ed0-d026" name="Louder Siren" hidden="false">
+                  <description>Replace &quot;bogey&quot; with &quot;any enemy vehicle&quot; for the purpose of the Siren special rules.</description>
+                </rule>
+              </rules>
               <costs>
                 <cost name=" Cans" typeId="91a9-beed-6d55-d7ea" value="2.0"/>
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
@@ -2032,14 +2113,14 @@
                 <cost name=" Build Slots" typeId="ba54-acdf-648d-86c5" value="0.0"/>
               </costs>
             </selectionEntry>
-            <selectionEntry id="fc2f-d866-c6e1-5b81" name="Double-Barrelled" hidden="false" collective="false" import="true" type="upgrade">
+            <selectionEntry id="fc2f-d866-c6e1-5b81" name="Double-Barreled" hidden="false" collective="false" import="true" type="upgrade">
               <constraints>
                 <constraint field="selections" scope="parent" value="1.0" percentValue="false" shared="true" includeChildSelections="false" includeChildForces="false" id="7ddc-eb22-b3f4-1d90" type="max"/>
               </constraints>
               <profiles>
-                <profile id="fd17-10c9-4fd6-3ae8" name="Double-Barrelled" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
+                <profile id="fd17-10c9-4fd6-3ae8" name="Double-Barreled" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">During the Attack Step, up to 3 weapons with the Cre Fired rule may gain +1 bonus to hit.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">During the Attack Step, up to 3 weapons with the Crew Fired rule may gain +1 bonus to hit.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -2087,7 +2168,7 @@
               <profiles>
                 <profile id="123a-53d3-4ba1-7086" name="Terrifying Lunatic" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">Whenever a vechicle controlled by another player ends its Movement Step within SHort range of this vehicle, the active vehicle gains a Hazard Token.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">Whenever a vehicle controlled by another player ends its Movement Step within Short range of this vehicle, the active vehicle gains a Hazard Token.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -2427,7 +2508,7 @@
               <profiles>
                 <profile id="6213-c3ba-7981-9a57" name="Easy Rider" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">ONce per round, this vehicle may discaard one rolled Skid Dice result before applying the results.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">Once per round, this vehicle may discard one rolled Skid Dice result before applying the results.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -2652,7 +2733,7 @@
               <profiles>
                 <profile id="6237-34e2-d227-4a51" name="Powerslide" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">This vehicle may use any template except the Long Straight instead of the Slide template when applying a Slide result. s with the step 1.1 of Movement Step, you must use the first movement template you touch. Treat teh selected movement template as a slide template for purposes of finding the vehicle&apos;s Final Position.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">This vehicle may use any template except the Long Straight instead of the Slide template when applying a Slide result. As with the step 1.1 of Movement Step, you must use the first movement template you touch. Treat the selected movement template as a slide template for purposes of finding the vehicle&apos;s Final Position.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -2717,7 +2798,7 @@
               <profiles>
                 <profile id="73b6-7ef4-601d-0f1d" name="Powder Keg" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">THis vehicle may add 1 to its explosion check. Treat this vehicle as one weight-class heavier when it explodes. This bonus *does* apply during resolution of the Fireworks perk.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">This vehicle may add 1 to its explosion check. Treat this vehicle as one weight-class heavier when it explodes. This bonus *does* apply during resolution of the Fireworks perk.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -2976,7 +3057,7 @@
               <profiles>
                 <profile id="ce7d-c090-cf03-90ea" name="PIT" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">During this vehicle&apos;s activation, if this vehicle is involved in a non-head-on Collision with an enemy vehicle, it may declare a PIT as its reaction, targeting the enemy vehicle, instead of a Smash Attack or an Evade. If this vehicle declares a PIT, it may select any movement template the target vehicle considers Hazardous in its current Gear. Immediately after the resolution of this Collision, the target vehicle&apos;s controller must make a forced move directly forward using the selected movement template. A PIT cannot be evaded. </characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">During this vehicle&apos;s activation, if this vehicle is involved in a non-head-on Collision with an enemy vehicle, it may declare a PIT as its reaction, targeting the enemy vehicle, instead of a Smash Attack or an Evade. If this vehicle declares a PIT, it may select any movement template the target vehicle considers Hazardous in its current Gear. Immediately after the resolution of this Collision, the target vehicle&apos;s controller must make a forced move directly forward using the selected movement template.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -3058,7 +3139,7 @@
               <profiles>
                 <profile id="ba4d-5659-29c7-e872" name="Drive Angry" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">At teh start of this vehicle&apos;s activation, this vehicle gains 1 Hazard Token.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">At the start of this vehicle&apos;s activation, this vehicle gains 1 Hazard Token.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -3074,7 +3155,7 @@
               <profiles>
                 <profile id="c8ee-f008-f517-92a4" name="Don&apos;t Come Knocking" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">At teh start of this vehicle&apos;s activation, it may gain 4 Hazard Tokens. If it does, this vehicle cannot gain or lose any Hazard Tokens by any means until the start of its next activation.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">At the start of this vehicle&apos;s activation, it may gain 4 Hazard Tokens. If it does, this vehicle cannot gain or lose any Hazard Tokens by any means until the start of its next activation.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -3189,7 +3270,7 @@ Napalm: Dropped, 4D6 Fire attack, remove this template after it affects a vehicl
               <profiles>
                 <profile id="95ff-7fb8-54fc-e079" name="Sympathy for the Devil" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">When this vehicle makes an evade check, its controller may select a friendly vehicle within Medium range. Add teh current Gear of the selected vehicle to this vehicle&apos;s current Gear for the purposes of this evade check. Both the selected vehicle and this vehicle suffer any unsaved damage from this attack, including any additional effects.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">When this vehicle makes an evade check, its controller may select a friendly vehicle within Medium range. Add the current Gear of the selected vehicle to this vehicle&apos;s current Gear for the purposes of this evade check. Both the selected vehicle and this vehicle suffer any unsaved damage from this attack, including any additional effects.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -3205,7 +3286,7 @@ Napalm: Dropped, 4D6 Fire attack, remove this template after it affects a vehicl
               <profiles>
                 <profile id="45bf-9b7f-f906-c501" name="Purifying Flames" hidden="false" typeId="f1ab-4fe6-1435-77a2" typeName="Perk">
                   <characteristics>
-                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">Once per activation, at the start of this vehicle&apos;s ativation, this vehicle may suffer up to 3 Fire damage to remove the same amount of damage from a friendly vehicle. This damage may not be reduced (including by Oot Inferno&apos;s &quot;Fire Walk With Me&quot; perk). This effect may not raise a vehicle above its starting Hull value.</characteristic>
+                    <characteristic name="Description" typeId="358e-0a9f-333a-7c1b">Once per activation, at the start of this vehicle&apos;s activation, this vehicle may suffer up to 3 Fire damage to remove the same amount of damage from a friendly vehicle. This damage may not be reduced (including by Oot Inferno&apos;s &quot;Fire Walk With Me&quot; perk). This effect may not raise a vehicle above its starting Hull value.</characteristic>
                   </characteristics>
                 </profile>
               </profiles>
@@ -3775,7 +3856,7 @@ When fired, the vehicle makes an immediately forced move Medium backwards, reduc
           </profiles>
           <rules>
             <rule id="59b4-0147-5c28-3fcf" name="Grabber Arm" hidden="false">
-              <description>If this weapon scores one or more un-cancelled hits against a target vehicle of the same weight class or lighter, the controller of the active vehicle may place the target vehicle anywhere withing Short range of hte target vehicle&apos;s orginal position. The target vehicle may be pivoted to face anh direction. This movement triggers a Collision Window. </description>
+              <description>If this weapon scores one or more un-cancelled hits against a target vehicle of the same weight class or lighter, the controller of the active vehicle may place the target vehicle anywhere within Short range of the target vehicle&apos;s orginal position. The target vehicle may be pivoted to face any direction. This movement causes a Collision Window. </description>
             </rule>
           </rules>
           <entryLinks>
@@ -3806,10 +3887,10 @@ When fired, the vehicle makes an immediately forced move Medium backwards, reduc
           </profiles>
           <rules>
             <rule id="8377-9914-73d4-f35a" name="Harpoon" hidden="false">
-              <description>Does not cause damage.
-First un-cancelled hit spins target to face directly away from or towards the attacking vehicle, whichever requires smallest degree of rotation.
-Subsequent un-cancelled hits each cause target to make a forced Short towards the attacker.
-If target is heavier than attacker, spin and move attacker towards target instead.</description>
+              <description>This weapon does not cause damage.
+The first un-cancelled hit spins target to face directly away from or towards the attacking vehicle, whichever requires the smallest degree of rotation.
+The second and subsequent un-cancelled hits each cause the target to make a forced Short Straight towards the attacker.
+If the target is a heavier class than the attacker, spin and move the attacker towards the target instead.</description>
             </rule>
           </rules>
           <entryLinks>
@@ -3886,7 +3967,7 @@ During these Collisions, all vehicles count as having no weapons or perks except
 
 Low-loader: If this vehicle collides with a wreck, it may gain 1 Ammo Token for the Wreck Lobber.
 
-Dumper: The Wreck Lobber may be fired as a rear-mounted dropped weapon. In this case, the wreck of a car is placed touching the rear of the active vehicle, and no Collision Window is triggered.</description>
+Dumper: Instead of using the Trebuchet rules, the Wreck Lobber may be fired as a rear-mounted dropped weapon. In this case, the wreck of a car is placed touching the rear of the active vehicle, and no Collision Window is triggered.</description>
             </rule>
           </rules>
           <entryLinks>
@@ -4156,7 +4237,7 @@ Dumper: The Wreck Lobber may be fired as a rear-mounted dropped weapon. In this 
               </profiles>
               <rules>
                 <rule id="7089-1cd7-34ba-a48a" name="Glue Dropper" hidden="false">
-                  <description>The template counts as a Treacherous surface. Any vehicle affected by this weapon must recude its current geare by 2 at the end of their Movement Step.
+                  <description>This template counts as a Treacherous surface. Any vehicle affected by this weapon must reduce its current gear by 2 at the end of their Movement Step.
 A single vehicle may not be affected by this weapon 2 activations in a row.</description>
                 </rule>
               </rules>
@@ -4228,12 +4309,12 @@ A single vehicle may not be affected by this weapon 2 activations in a row.</des
               </profiles>
               <rules>
                 <rule id="2a39-6ebd-0ede-8843" name="RC Car Bombs" hidden="false">
-                  <description>When attacking, place a RC Car (use a tiny car no larger than 20mm square) so within Short range of the attacking vehicle, facing any direction. THis placement triggers a Collision Window.
+                  <description>When attacking, place a RC Car (use a tiny car no larger than 20mm square) within Short range of the attacking vehicle, facing any direction. This placement triggers a Collision Window.
 The RC Car counts as a lightweight vehicle in Gear 3 with 1 Hull, 1 Crew, and 0 Handling. It can make shooting attacks but cannot change Gear. 
 The RC Car cannot be used for the purposes of scenario rules, Audience Votes, or perks.
 If the RC Car is involved in a Collision, it suffers one damage before the Collision.
 If the RC Car wipes out, it suffers one damage before the Wipeout is resolved.
-WHen the RC Car would be Wrecked, it instead expolodes, when the RC Car explodes it rolls 4D6 (Blast) attack, as if it were a middleweight vehicle.</description>
+When the RC Car would be Wrecked, it instead explodes. When the RC Car explodes it rolls 4D6 (Blast) attack, as if it were a middleweight vehicle.</description>
                 </rule>
               </rules>
               <entryLinks>
@@ -4380,8 +4461,8 @@ If any part of a vehicle&apos;s movement template or Final Position touches this
                 <rule id="ac81-b41c-5ca2-c623" name="Sentry Gun" publicationId="a0bf-31f8-e06a-12f0" page="80" hidden="false">
                   <description>When attacking, place a Sentry Gun within Short range of the attacking vehicle.
 The Sentry Gun remains in play as a lightweight destructible obstacle. They may be targeted with shooting attacks and have 2 Hull.
-The Sentry Gun automatically makes a 2D6 shotting attack against any vehicle that ends their Movement Step within Meidum range of the Sentry Gun in a 360-degree arc of fire. The target may evade as normal. This Sentry Gun will never target vehicles form the team of the vehicle that dropped it.
-The Sentry Gun cannot be used for scenario rules, Audience Votes, and perks.</description>
+The Sentry Gun automatically makes a 2D6 shooting attack against any vehicle that ends their Movement Step within Meidum range of the Sentry Gun in a 360-degree arc of fire. The target may evade as normal. This Sentry Gun will never target vehicles from the team of the vehicle that dropped it.
+The Sentry Gun cannot be used for scenario rules, Audience Votes, or perks.</description>
                 </rule>
               </rules>
               <entryLinks>
@@ -4501,7 +4582,7 @@ This continues until the weapon fails to damage a target, or there are no furthe
               </profiles>
               <rules>
                 <rule id="b043-024a-4b07-8d27" name="Grav Gun" hidden="false">
-                  <description>If this weapon scores one or more un-cancelled hits on the target, instead of causing damage the attacking vehicle&apos;s controller choses to make the target vehicle&apos;s weight class one heavier or one weight class lighter until the target&apos;s next activation.
+                  <description>If this weapon scores one or more un-cancelled hits on the target, instead of causing damage the attacking vehicle&apos;s controller choses to make the target vehicle&apos;s weight class one weight class heavier or one weight class lighter until the end of the target&apos;s next activation.
  </description>
                 </rule>
               </rules>
